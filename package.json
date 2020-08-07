@@ -1,11 +1,11 @@
 {
-  "name": "mapkit.js",
+  "name": "mapkitjs",
   "version": "0.0.1",
-  "description": "An npm module for Apple's Mapkit.JS",
+  "description": "An npm module for Apple's Mapkit JS",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harveyconnor/mapkit.js.git"
+    "url": "git+https://github.com/Solidsilver/mapkit.js"
   },
   "keywords": [
     "apple",
@@ -20,8 +20,8 @@
   "author": "Apple",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/harveyconnor/mapkit.js/issues"
+    "url": "https://github.com/Solidsilver/mapkit.js/issues"
   },
-  "homepage": "https://github.com/harveyconnor/mapkit.js#readme",
+  "homepage": "https://github.com/Solidsilver/mapkit.js#readme",
   "types": "types"
 }
