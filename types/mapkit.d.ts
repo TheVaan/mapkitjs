@@ -21,7 +21,7 @@ declare namespace mapkit {
   function addEventListener<T>(
     type: InitializationEventType,
     listener: (this: T, event: InitializationEvent) => void,
-    thisObject?: T,
+    thisObject?: T
   ): void;
   /**
    * Unsubscribes a listener function from an event type.
@@ -33,7 +33,7 @@ declare namespace mapkit {
   function removeEventListener<T>(
     type: InitializationEventType,
     listener: (this: T, event: InitializationEvent) => void,
-    thisObject?: T,
+    thisObject?: T
   ): void;
   /**
    * A language ID indicating the selected language.
@@ -84,9 +84,9 @@ declare namespace mapkit {
     readonly Visible: string;
   };
 
-  type InitializationEventType = 'configuration-change' | 'error';
+  type InitializationEventType = "configuration-change" | "error";
 
   interface InitializationEvent {
-    status: 'Initialized' | 'Refreshed' | 'Unauthorized' | 'Too Many Requests';
+    status: "Initialized" | "Refreshed" | "Unauthorized" | "Too Many Requests";
   }
 }
