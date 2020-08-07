@@ -13,7 +13,7 @@ declare namespace mapkit {
     addEventListener<T>(
       type: OverlayEventType,
       listener: (event: EventBase<this>) => void,
-      thisObject?: T,
+      thisObject?: T
     ): void;
     /**
      * Stops listening for the specified type of event.
@@ -21,7 +21,7 @@ declare namespace mapkit {
     removeEventListener<T>(
       type: OverlayEventType,
       listener: (event: EventBase<this>) => void,
-      thisObject?: T,
+      thisObject?: T
     ): void;
     /**
      * Custom data to associate with this overlay.
@@ -62,7 +62,11 @@ declare namespace mapkit {
      * @param options An object literal of Overlay properties used to initialize
      * the circle.
      */
-    constructor(coordinate: mapkit.Coordinate, radius: number, options?: StylesOverlayOptions);
+    constructor(
+      coordinate: mapkit.Coordinate,
+      radius: number,
+      options?: StylesOverlayOptions
+    );
     /**
      * The coordinate of the circle overlay's center.
      */
@@ -104,7 +108,7 @@ declare namespace mapkit {
      * @param options An object literal of options with which to initialize the
      * polygon.
      */
-    constructor(points: mapkit.Coordinate[], options?: StylesOverlayOptions);
+    constructor(points: mapkit.Coordinate[][], options?: StylesOverlayOptions);
     /**
      * One or more arrays of coordinates that define the polygon overlay shape.
      */
@@ -138,5 +142,5 @@ declare namespace mapkit {
     style?: mapkit.Style;
   }
 
-  type OverlayEventType = 'select' | 'deselect';
+  type OverlayEventType = "select" | "deselect";
 }
