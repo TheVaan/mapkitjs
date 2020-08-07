@@ -1,6 +1,6 @@
 {
-  "name": "mapkitjs",
-  "version": "0.0.1",
+  "name": "@solidsilver/mapkitjs",
+  "version": "0.0.2",
   "description": "An npm module for Apple's Mapkit JS",
   "main": "index.js",
   "repository": {
@@ -23,5 +23,8 @@
     "url": "https://github.com/Solidsilver/mapkit.js/issues"
   },
   "homepage": "https://github.com/Solidsilver/mapkit.js#readme",
-  "types": "types"
+  "types": "types",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

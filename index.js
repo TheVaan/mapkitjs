@@ -1,3 +1,4 @@
+
 require("./mapkit.js"),
   (module.exports = window.mapkit),
   (module.exports.Annotation = window.mapkit.Annotation),
