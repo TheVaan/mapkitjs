@@ -112,7 +112,7 @@ declare namespace mapkit {
     /**
      * One or more arrays of coordinates that define the polygon overlay shape.
      */
-    points: mapkit.Coordinate[];
+    points: mapkit.Coordinate[][];
   }
 
   interface OverlayOptions {
