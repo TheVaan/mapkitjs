@@ -1,11 +1,11 @@
 {
   "name": "@solidsilver/mapkitjs",
   "version": "0.0.3",
-  "description": "An npm module for Apple's Mapkit JS",
+  "description": "An npm module for Apple's Mapkit JS that works with Vue",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Solidsilver/mapkit.js.git"
+    "url": "git+https://github.com/Solidsilver/mapkitjs.git"
   },
   "keywords": [
     "apple",
@@ -15,14 +15,16 @@
     "maps",
     "types",
     "typings",
-    "typescript"
+    "typescript",
+    "vue",
+    "vuejs"
   ],
   "author": "Apple",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Solidsilver/mapkit.js/issues"
+    "url": "https://github.com/Solidsilver/mapkitjs/issues"
   },
-  "homepage": "https://github.com/Solidsilver/mapkit.js#readme",
+  "homepage": "https://github.com/Solidsilver/mapkitjs#readme",
   "types": "types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
