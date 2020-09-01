@@ -42,7 +42,7 @@ From here, `mapkit` and `this.map` can be accessed and modified as [documented](
 
 ## Updating
 
-In order to update, simply replace the contents of the `types` folder or make a pull request to update to the latest version.
+In order to update, simply replace the contents of the `types` folder, submit an issue, or make a pull request to update to the latest version.
 
 The latest contents are pulled from:
 
