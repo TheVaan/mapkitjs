@@ -1,11 +1,14 @@
 {
   "name": "@solidsilver/mapkitjs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An npm module for Apple's Mapkit JS that works with Vue",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Solidsilver/mapkitjs.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "apple",
