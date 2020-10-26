@@ -106,6 +106,14 @@ declare namespace mapkit {
      * Changes the map's visible map rectangle to the specified map rectangle.
      */
     setVisibleMapRectAnimated(mapRect: mapkit.MapRect, animate?: boolean): this;
+    /**
+     * Sets the altitude of the camera above the center of the map.
+     */
+    cameraDistance: number;
+    /**
+     * Changes the map's camera distance with an animated transition.
+     */
+    setCameraDistanceAnimated(distance: number, animate?: boolean): this;
 
     // Configuring the Map's Appearance
 
