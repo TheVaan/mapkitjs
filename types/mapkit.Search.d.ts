@@ -71,6 +71,26 @@ declare namespace mapkit {
      * A map region that provides a hint for the geographic area to search.
      */
     region?: mapkit.CoordinateRegion;
+    /**
+     * A Boolean value that indicates whether the search results should include addresses.
+     */
+    includeAddresses?: boolean;
+    /**
+     * A Boolean value that indicates whether the search results should include points of interest.
+     */
+    includePointsOfInterest?: boolean;
+    /**
+     * A Boolean value that indicates whether the search autocomplete results should include queries.
+     */
+    includeQueries?: boolean;
+    /**
+     * A filter used to include or exclude point of interest categories.
+     */
+    //pointOfInterestFilter?: mapkit.PointOfInterestFilter;
+    /**
+     * A string that constrains search results to within the provided countries.
+     */
+    limitToCountries?: string;
   }
 
   type SearchCallback<Q> = (
