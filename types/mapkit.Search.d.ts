@@ -40,7 +40,7 @@ declare namespace mapkit {
     autocomplete(
       query: string,
       callback: SearchDelegate | AutocompleteSearchCallback,
-      options?: SearchOptions,
+      options?: SearchAutoCompleteOptions,
     ): void;
     /**
      * Cancels a search request using its request ID.
