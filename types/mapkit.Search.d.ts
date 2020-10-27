@@ -1,6 +1,7 @@
-// Type definitions for MapKit JS 5.18.0
+// Type definitions for MapKit JS 5.49.0
 // Project: https://developer.apple.com/documentation/mapkitjs
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
+// Updated by: Jan van Heesch <https://github.com/thevaan>
 
 declare namespace mapkit {
   /**
