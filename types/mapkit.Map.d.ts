@@ -1,6 +1,7 @@
-// Type definitions for MapKit JS 5.18.0
+// Type definitions for MapKit JS 5.49.0
 // Project: https://developer.apple.com/documentation/mapkitjs
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
+// Updated by: Jan van Heesch <https://github.com/thevaan>
 
 declare namespace mapkit {
   /**
@@ -107,6 +108,15 @@ declare namespace mapkit {
      */
     setVisibleMapRectAnimated(mapRect: mapkit.MapRect, animate?: boolean): this;
     /**
+     * Sets a constraint for the center of the map.
+     */
+    cameraBoundray: CameraBoundaryDescription;
+    /**
+     * Sets a constraint for the center of the map.
+     */
+    setCameraBoundaryAnimated(coordinate: mapkit.CoordinateRegion, animate?: boolean): this;
+    // TODO: setCameraBoundaryAnimated(mapRect: mapRect, animate?: boolean): this;
+    /**
      * Sets the altitude of the camera above the center of the map.
      */
     cameraDistance: number;
@@ -114,6 +124,14 @@ declare namespace mapkit {
      * Changes the map's camera distance with an animated transition.
      */
     setCameraDistanceAnimated(distance: number, animate?: boolean): this;
+    /**
+     * Sets the altitude of the camera above the center of the map.
+     */
+    cameraZoomRange: mapkit.CameraZoomRange;
+    /**
+     * Changes the map's camera zoom range with an animated transition.
+     */
+    setCameraZoomRangeAnimated(cameraZoomRange: mapkit.CameraZoomRange, animate?: boolean): this;
 
     // Configuring the Map's Appearance
 
@@ -204,6 +222,10 @@ declare namespace mapkit {
      * A Boolean value that determines whether the user location control is visible.
      */
     showsUserLocationControl: boolean;
+    /**
+     * The filter used to determine the points of interest shown on the map.
+     */
+    pointOfInterestFilter: mapkit.PointOfInterestFilter;
     /**
      * A Boolean value that determines whether the map displays points of interest.
      */
@@ -296,6 +318,17 @@ declare namespace mapkit {
      * Returns the topmost overlay at a given point on the webpage.
      */
     topOverlayAtPoint(point: DOMPoint): mapkit.Overlay | null;
+
+    // Adding and Removing Geographical Features
+
+    /**
+     * Adds a collection of annotations, overlays, or other item collections to the map.
+     */
+    addItems(items: (mapkit.Annotation | mapkit.Overlay | ItemCollection)[] | ItemCollection): (mapkit.Annotation | mapkit.Overlay | ItemCollection)[] | ItemCollection;
+    /**
+    * Removes a collection of annotations, overlays, or other item collections from the map.
+    */
+    removeItems(items: (mapkit.Annotation | mapkit.Overlay | ItemCollection)[] | ItemCollection): (mapkit.Annotation | mapkit.Overlay | ItemCollection)[] | ItemCollection;
 
     // Adding and Removing Tile Overlays
 
@@ -458,6 +491,20 @@ declare namespace mapkit {
      */
     showsUserLocationControl?: boolean;
   }
+  
+  /**
+   * An object literal containing at least one property defining an area on the map.
+   */
+  interface CameraBoundaryDescription {
+    /**
+     * A rectangular area on a two-dimensional map projection.
+     */
+    mapRect: mapkit.MapRect;
+    /**
+     * A rectangular area on a map, defined by coordinates of the rectangle's northeast and southwest corners.
+     */
+    region: mapkit.CoordinateRegion;
+  }
 
   /**
    * An array to which maps are automatically added and removed as they are
@@ -514,5 +561,23 @@ declare namespace mapkit {
      * Spacing that is added around the computed map region when showing items.
      */
     minimumSpan?: mapkit.CoordinateSpan;
+  }
+
+  /**
+   * A tree structure containing annotations, overlays, and nested item collection objects.
+   */
+  interface ItemCollection {
+    /**
+     * The raw GeoJSON data.
+     */
+    data: Object;
+    /**
+     * A flattened array of items that include annotations or overlays.
+     */
+    getFlattenedItemList: (mapkit.Annotation | mapkit.Overlay)[];
+    /**
+     * A nested list of annotations, overlays, or other item collections.
+     */
+    items: (mapkit.Annotation | mapkit.Overlay | ItemCollection)[];
   }
 }
