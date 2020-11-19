@@ -519,6 +519,7 @@ declare namespace mapkit {
 
   // prettier-ignore
   interface MapEvents<T> {
+    // Map Display Events
     'region-change-start': EventBase<T>;
     'region-change-end': EventBase<T>;
     'scroll-start': EventBase<T>;
@@ -526,9 +527,11 @@ declare namespace mapkit {
     'zoom-start': EventBase<T>;
     'zoom-end': EventBase<T>;
     'map-type-change': EventBase<T>;
-    'single-tap': EventBase<T>;
-    'double-tap': EventBase<T>;
-    'long-press': EventBase<T>;
+
+    // Map Interaction Events
+    'single-tap': EventBase<T> & { pointOnPage: DOMPoint; domEvents: Event[] };
+    'double-tap': EventBase<T> & { pointOnPage: DOMPoint; domEvents: Event[] };
+    'long-press': EventBase<T> & { pointOnPage: DOMPoint; domEvents: Event[] };
 
     // Annotation Events
 
