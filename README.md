@@ -3,18 +3,16 @@
 An npm module for Apple's Mapkit JS for use with Vue. This implementation uses the latest version of Mapkit JS and places its contents inside of a types folder.
 Based on Harvey Conner's repo, but with extra types from [mapkit-typescript](https://www.npmjs.com/package/mapkit-typescript).
 
-![NPM version](https://img.shields.io/npm/v/@solidsilver/mapkitjs)
+![NPM version](https://img.shields.io/npm/v/@glacier-peak-studios/mapkitjs)
 
 ## Installation
 
-```
-npm install @solidsilver/mapkitjs
-```
+See [Package Page](https://github.com/Glacier-Peak-Studios/mapkitjs/packages)
 
 ## Usage
 
 ```ts
-import mapkit from "@solidsilver/mapkitjs";
+import mapkit from "@glacier-peak-studios/mapkitjs";
 ```
 To init MapKitJS:
 ```ts
