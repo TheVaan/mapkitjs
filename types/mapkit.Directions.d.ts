@@ -1,6 +1,7 @@
-// Type definitions for MapKit JS 5.18.0
+// Type definitions for MapKit JS 5.49.0
 // Project: https://developer.apple.com/documentation/mapkitjs
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
+// Updated by: Jan van Heesch <https://github.com/thevaan>
 
 declare namespace mapkit {
   /**
@@ -28,6 +29,15 @@ declare namespace mapkit {
       request: DirectionsRequest,
       callback: (error: Error | null, data: DirectionsResponse) => void,
     ): number;
+    /**
+     * Retrieves estimated arrival times to up to 10 destinations from a single starting point.
+     * @param request An EtaRequestOptions object that specifies details for the 
+     * server to provide estimated arrival times at one or more destinations.
+     * @param callback A callback function that receives the estimated time response 
+     * object, returned asynchronously.
+     * @return A request ID, which you can pass to cancel to abort a pending request.
+     */
+    eta(request: EtaRequestOptions, callback: (error: Error | null, data: EtaResponse) => void): number;
     /**
      * Cancels a previous request for route directions.
      *
@@ -80,6 +90,16 @@ declare namespace mapkit {
      * routes when they are available.
      */
     requestsAlternateRoutes?: boolean;
+    /**
+     * The arrival date for the trip.
+     * Specify either a departureDate or an arrivalDate, don’t set both.
+     */
+    arrivalDate: Date;
+    /**
+     * The departure date for the trip.
+     * Specify either a departureDate or an arrivalDate, don’t set both.
+     */
+    departureDate: Date;
   }
 
   /**
@@ -146,5 +166,63 @@ declare namespace mapkit {
      * The transport type of the step.
      */
     transportType: string;
+  }
+
+  /**
+   * The options you may provide for requesting estimated arrival times.
+   */
+  interface EtaRequestOptions {
+    /**
+     * The starting point for estimated arrival time requests.
+     */
+    origin: mapkit.Coordinate;
+    /**
+     * The time of departure used in an estimated arrival time request.
+     */
+    destinations: mapkit.Coordinate[];
+    /**
+     * An array of coordinates that represent end points for estimated arrival time requests.
+     */
+    transportType: mapkit.Directions.Transport;
+    /**
+     * The mode of transportation the server uses when estimating arrival times.
+     */
+    departureDate: Date;
+  }
+
+  /**
+   * The estimated arrival times for a set of destinations.
+   */
+  interface EtaResponse {
+    /**
+     * The request object associated with the estimated time of arrival response.
+     */
+    request: Object;
+    /**
+     * An array of estimated arrival times.
+     */
+    etas: EtaResult[];
+  }
+
+  /**
+   * The mode of transportation, distance, and travel time estimates for a single destination.
+   */
+  interface EtaResult {
+    /**
+     * The mode of transportation used to estimate the arrival time.
+     */
+    transportType: mapkit.Directions.Transport;
+    /**
+     * The route distance in meters.
+     */
+    distance: number;
+    /**
+     * The estimated travel time in seconds, including estimated delays due to traffic.
+     */
+    expectedTravelTime: number;
+    /**
+     * The estimated travel time in seconds, excluding estimated delays for traffic.
+     */
+    staticTravelTime: number;
   }
 }
