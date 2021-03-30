@@ -17,5 +17,7 @@
 /// <reference path="mapkit.MapSize.d.ts" />
 /// <reference path="mapkit.BoundingRegion.d.ts" />
 /// <reference path="mapkit.GeoJSON.d.ts" />
+/// <reference path="mapkit.CameraZoomRange.d.ts" />
+/// <reference path="mapkit.PointOfInterestFilter.d.ts" />
 
 export default mapkit;

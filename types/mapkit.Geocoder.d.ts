@@ -1,6 +1,7 @@
-// Type definitions for MapKit JS 5.18.0
+// Type definitions for MapKit JS 5.49.0
 // Project: https://developer.apple.com/documentation/mapkitjs
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
+// Updated by: Jan van Heesch <https://github.com/thevaan>
 
 declare namespace mapkit {
   /**
@@ -123,5 +124,53 @@ declare namespace mapkit {
      * The country code associated with the place.
      */
     countryCode: string;
+    /**
+     * The category of the place.
+     */
+    pointOfInterestCategory: mapkit.PointOfInterestCategory;
+    /**
+     * The state or province of the place.
+     */
+    administrativeArea?: string;
+    /**
+     * The country of the place.
+     */
+    country?: string;
+    /**
+     * The short code for the state or area.
+     */
+    administrativeAreaCode?: string;
+    /**
+     * The city of the place.
+     */
+    locality?: string;
+    /**
+     * The postal code of the place.
+     */
+    postCode?: string;
+    /**
+     * The name of the area within the locality.
+     */
+    subLocality?: string;
+    /**
+     * The street name at the place.
+     */
+    thoroughfare?: string;
+    /**
+     * The number on the street at the place.
+     */
+    subThoroughfare?: string;
+    /**
+     * A combination of thoroughfare and subthoroughfare.
+     */
+    fullThoroughfare?: string;
+    /**
+     * Common names of the area in which the place resides.
+     */
+    areasOfInterest?: string[];
+    /**
+     * Common names for the local area or neighborhood of the place.
+     */
+    dependentLocalities?: string[];
   }
 }
